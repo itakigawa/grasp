@@ -47,7 +47,7 @@ $ tar xvjf grasp_data.tar.bz2
 
 ### Example 1
 
-Listing 10000 most significant substructure pairs shared by at least 200 interactions.
+Listing 1000 most significant substructure pairs shared by at least 200 interactions.
 
 **Command:**
 
