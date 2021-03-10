@@ -1,0 +1,23 @@
+	DFS code output:
+	<id> <support> [DFS code]
+
+	"id" is an integer. 
+	"support" is the frequency of the following graph.
+	"DFS code" has the following fomrat:
+	(0) 0 (0f1) 3 (0f0) 0 (2f1) 3 (2f0) 0 (4f6) 5 (b0)
+	(0): "0" is the label of the first vertex.
+	0 (0f1): the 0th (the second ZERO) vertex has a forward edge with label "0" 
+			 (the first ZERO) and the new vertex has label "1";
+	0 (4f6): the 4th vertex has a forward edge with label "0" and the new
+				 vertex has label "6";
+	5 (b0):	 the last vertex in the code (till this edge, please do not count 
+			 the vertices after this edge in the code if any) has a backward 
+			 edge with label "5" and it connects to 0th vertex;
+
+	NOTE: DFS code is introduced in our ICDM'02 paper. Here the code is in a 
+		  compact representation format. Each vertex is assigned a subscript 
+		  based on its position in a DFS search.
+
+Xifeng Yan                Jiawei Han
+May 1, 2004
+xyan@uiuc.edu             hanj@uiuc.edu
