@@ -39,7 +39,7 @@ Molecular graphs need to be encoded in [DFS code](HowToReadDFSCode.txt). See the
 
 ## Examples
 
-Data Retrieval
+### Data
 
 ```
 $ curl -OL https://www.dropbox.com/s/3r6ru1ww6evkw4w/grasp_data.tar.bz2
@@ -60,14 +60,14 @@ $ ../bin/grasp -m 200 -n 1000 -o output test.sdf test.fasta test.interaction
 ```
 
 **Input:**   
-- compound-protein pair: test.interaction
-- compounds: test.sdf (the first line must include the ID)
-- proteins: test.fasta (the first line must include the ID)
+- test.interaction compound-protein pair
+- test.sdf compounds (the first line must include the ID)
+- test.fast proteins (the first line must include the ID)
 
 **Output:**
-- outout/pair.patterns   ... 10000 most significant substructure pairs
-- outout/feat.instances  ... i-th line shows compound-protein pairs containing i-th substructure pairs
-- outout/atom.dict ... dictionary for DFS code
+- outout/pair.patterns 10000 most significant substructure pairs
+- outout/feat.instances i-th line shows compound-protein pairs containing i-th substructure pairs
+- outout/atom.dict dictionary for DFS code
 
 ### Example 2
 
@@ -76,11 +76,11 @@ Profiling arbitrary compound-ligand pairs using obtained substructure pairs.
 ```
 $ cd grasp/test
 $ mkdir finder_out
-$ ../bin/finder -o ./finder_out output/pair.patterns output/atom.dict test.sdf test.fasta test.interaction
+$ ../bin/finder -o finder_out output/pair.patterns output/atom.dict test.sdf test.fasta test.interaction
 ```
 
-*Output:*
-- ./finder_out/feat.table, the i-th line of which represents the substructure pairs contained in the i-th compound-protein pair.
+**Output:**
+- finder_out/feat.table the i-th line of which represents the substructure pairs contained in the i-th compound-protein pair.
 
 ### Example 3
 
