@@ -7,6 +7,8 @@ by Ichigaku Takigawa, Koji Tsuda, and Hiroshi Mamitsuka
 Takigawa I, Tsuda K, Mamitsuka H, 
 Mining significant substructure pairs for interpreting polypharmacology in drug-target network. *PLoS One*, 2011 Feb 23;6(2):e16999.  doi: [10.1371/journal.pone.0016999](https://doi.org/10.1371/journal.pone.0016999).
 
+[https://www.bic.kyoto-u.ac.jp/pathway/grasp/](https://www.bic.kyoto-u.ac.jp/pathway/grasp/)
+
 ## Compile and Install
 
 
@@ -34,6 +36,13 @@ Molecular graphs need to be encoded in [DFS code](HowToReadDFSCode.txt). See the
 - Yan X, Han J, gSpan: Graph-Based Substructure Pattern Mining. Proc. 2002 of Int. Conf. on Data Mining (ICDM'02).
 
 ## Example
+
+Data Retrieval
+
+```
+$ curl -OL https://www.dropbox.com/s/3r6ru1ww6evkw4w/grasp_data.tar.bz2
+$ tar xvjf grasp_data.tar.bz2
+```
 
 
 ### Example 1
