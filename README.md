@@ -5,7 +5,7 @@ by Ichigaku Takigawa, Koji Tsuda, and Hiroshi Mamitsuka
 ## Paper
 
 Takigawa I, Tsuda K, Mamitsuka H, 
-Mining significant substructure pairs for interpreting polypharmacology in drug-target network. *PLoS One*, 2011 Feb 23;6(2):e16999.  doi: 10.1371/journal.pone.0016999.
+Mining significant substructure pairs for interpreting polypharmacology in drug-target network. *PLoS One*, 2011 Feb 23;6(2):e16999.  doi: [10.1371/journal.pone.0016999](https://doi.org/10.1371/journal.pone.0016999).
 
 ## Compile and Install
 
@@ -53,21 +53,19 @@ mkdir output
 - compounds: test.sdf (the first line must include the ID)
 - proteins: test.fasta (the first line must include the ID)
 
-*Output:*
+**Output:**
 - outout/pair.patterns   ... 10000 most significant substructure pairs
 - outout/feat.instances  ... i-th line shows compound-protein pairs containing i-th substructure pairs
 - outout/atom.dict ... dictionary for DFS code
-
-```
 
 ### Example 2
 
 Profiling arbitrary compound-ligand pairs using obtained substructure pairs.
 
 ```
-cd grasp/test
-mkdir finder_out
-../bin/finder -o ./finder_out output/pair.patterns output/atom.dict test.sdf test.fasta test.interaction
+$ cd grasp/test
+$ mkdir finder_out
+$ ../bin/finder -o ./finder_out output/pair.patterns output/atom.dict test.sdf test.fasta test.interaction
 ```
 
 *Output:*
@@ -78,13 +76,13 @@ mkdir finder_out
 Nearest neighbor search for pairs explicitly defined.
 
 ```
-../bin/evaluator -o evaluate.dat output/pair.patterns output/atom.dict random.sdf random.fasta random.pairs finder_out/feat.table
+$ ../bin/evaluator -o evaluate.dat output/pair.patterns output/atom.dict random.sdf random.fasta random.pairs finder_out/feat.table
 ```
 
 100 highest scoring nearest neighbor search for all possible combinations of pairs.
 
 ```
-../bin/predictor -n 100 -o predict.dat output/pair.patterns output/atom.dict random.sdf random.fasta finder_out/feat.table
+$ ../bin/predictor -n 100 -o predict.dat output/pair.patterns output/atom.dict random.sdf random.fasta finder_out/feat.table
 ```
 
 
@@ -93,13 +91,13 @@ Nearest neighbor search for pairs explicitly defined.
 To obtain fragment-pair patterns in the paper
 
 ```
-cd grasp
-./bin/grasp -m 561 -n 20000 -o grasp_out data/drugbank_sm/drug.sdf data/drugbank_sm/target.fasta data/drugbank_sm/interaction.txt > grasp_out/log | cat
-ruby bin/feat_reductor.rb grasp_out/feat.instances grasp_out/pair.patterns 10000 > nonredundant_10000.patterns
+$ cd grasp
+$ ./bin/grasp -m 561 -n 20000 -o grasp_out data/drugbank_sm/drug.sdf data/drugbank_sm/target.fasta data/drugbank_sm/interaction.txt > grasp_out/log | cat
+$ ruby bin/feat_reductor.rb grasp_out/feat.instances grasp_out/pair.patterns 10000 > nonredundant_10000.patterns
 ```
 
 To generate feat.table
 
 ```
-time ./bin/finder -o ./finder_out nonredundant_10000.patterns grasp_out/atom.dict data/drugbank_sm/drug.sdf data/drugbank_sm/target.fasta data/drugbank_sm/interaction.txt > finder_out/log
+$ time ./bin/finder -o ./finder_out nonredundant_10000.patterns grasp_out/atom.dict data/drugbank_sm/drug.sdf data/drugbank_sm/target.fasta data/drugbank_sm/interaction.txt > finder_out/log
 ```
