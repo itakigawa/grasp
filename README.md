@@ -11,6 +11,7 @@ Mining significant substructure pairs for interpreting polypharmacology in drug-
 
 ## Compile and Install
 
+Linux/Mac
 
 ```
 $ git clone https://github.com/itakigawa/grasp.git
@@ -21,6 +22,7 @@ $ make; make install
 Docker
 
 ```
+$ git clone https://github.com/itakigawa/grasp.git
 $ cd grasp
 $ docker build -t grasp_dev .
 $ docker run -it --rm  -v "$PWD":/workspace grasp_dev bash
