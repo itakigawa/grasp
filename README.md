@@ -37,7 +37,7 @@ Molecular graphs need to be encoded in [DFS code](HowToReadDFSCode.txt). See the
 
 - Yan X, Han J, gSpan: Graph-Based Substructure Pattern Mining. Proc. 2002 of Int. Conf. on Data Mining (ICDM'02).
 
-## Example
+## Examples
 
 Data Retrieval
 
@@ -54,9 +54,9 @@ Listing 1000 most significant substructure pairs shared by at least 200 interact
 **Command:**
 
 ```
-cd grasp/test
-mkdir output
-../bin/grasp -m 200 -n 1000 -o output test.sdf test.fasta test.interaction 
+$ cd grasp/test
+$ mkdir output
+$ ../bin/grasp -m 200 -n 1000 -o output test.sdf test.fasta test.interaction 
 ```
 
 **Input:**   
