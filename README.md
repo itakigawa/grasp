@@ -11,7 +11,7 @@ Mining significant substructure pairs for interpreting polypharmacology in drug-
 
 ## Compile and Install
 
-Linux/Mac
+Linux/Mac (requires clang/gcc + libboost)
 
 ```
 $ git clone https://github.com/itakigawa/grasp.git
@@ -33,7 +33,7 @@ bash# make install
 
 ## Input Format
 
-Molecular graphs need to be encoded in [DFS code](HowToReadDFSCode.txt). See the gSpan paper for the detail. 
+Subraph patterns are encoded in [DFS code](HowToReadDFSCode.txt). See the gSpan paper for the detail. 
 
 - Yan X, Han J, gSpan: Graph-Based Substructure Pattern Mining. Proc. 2002 of Int. Conf. on Data Mining (ICDM'02).
 
